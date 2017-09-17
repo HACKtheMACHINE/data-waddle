@@ -1,4 +1,4 @@
-# HACKtheMACHINE: Data Science And The Seven Seas
+# HACKtheMACHINE: Data Science and the Seven Seas
 
 [![EMAIL ADDRESS](https://img.shields.io/badge/CONTACT-EMAIL-brightgreen.svg)](mailto:danielrbrownjr+htm@gmail.com)
 [![MIT LICENSE](https://img.shields.io/badge/LICENSE-MIT-bri.svg)](./LICENSE.md)
