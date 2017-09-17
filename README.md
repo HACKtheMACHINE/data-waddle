@@ -5,3 +5,5 @@
 
 This is a repo that I'm setting up for the HACKtheMACHINE event on September
 22nd, 2017 in Boston, MA.
+
+![HACKtheMACHINE Image](https://static1.squarespace.com/static/596d24cd4402430bb863ffad/t/5977bc33ebbd1a2b573d2df7/1505600711911/?format=1500w)
