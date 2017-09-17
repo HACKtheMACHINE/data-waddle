@@ -1,4 +1,4 @@
-# Data Science And TheSevenSeas
+# Data Science And The Seven Seas
 
 [![HACKtheMACHINE](http://github.com/HACKtheMACHINE/data-waddle)](http://www.hackthemachine.ai)
 
