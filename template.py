@@ -22,6 +22,11 @@ dataset = pd.read_csv('mall_customers.csv')
 x = dataset.iloc[:, 1:-1].values
 y = dataset.iloc[:, 4].values
 
+# Taking care of missing data
+imputer = Imputer(missing_values = 'NaN', strategy = 'mean', axis = 0)
+imputer = imputer.fit(x[:, 1:4])
+x[:, 1:4] = imputer.transform(x[:, 1:4])
+
 # Encoding categorical data
 label_encoder_x = LabelEncoder()
 x[:, 0] = label_encoder_x.fit_transform(x[:, 0])
@@ -35,10 +40,7 @@ x = one_hot_encoder.fit_transform(x).toarray()
 x = x[:, 1:5] # drops the first column of categorical features.
 
 
-# Taking care of missing data
-imputer = Imputer(missing_values = 'NaN', strategy = 'mean', axis = 0)
-imputer = imputer.fit(x[:, 1:4])
-x[:, 1:4] = imputer.transform(x[:, 1:4])
+
 
 
 
