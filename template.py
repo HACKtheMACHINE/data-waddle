@@ -16,9 +16,12 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import Imputer
+from sklearn.preprocessing import StandardScaler
+from sklearn.cross_validation import train_test_split
+from sklearn.linear_model import LinearRegression
 
 # Import dataset
-dataset = pd.read_csv('mall_customers.csv')
+dataset = pd.read_csv('dataset.csv')
 x = dataset.iloc[:, 1:-1].values
 y = dataset.iloc[:, 4].values
 
@@ -36,11 +39,25 @@ x = one_hot_encoder.fit_transform(x).toarray()
 # To prevent errors in processing, in python you should use one less column
 # of categorical data than the number of options in your categorical feature.
 # In this case, there are two options of categorical data, so we need one
-# column of features.
-x = x[:, 1:5] # drops the first column of categorical features.
+# column of features. Known as "dummy variable"
+x = x[:, 1:5] # removes the "dummy variable"
 
+# Splitting the dataset into the Training set and Test set
+x_train, x_test, y_train, y_test = train_test_split(
+        x, y, test_size = 0.2, random_state = 0)
 
+"""# Feature Scaling
+sc_x = StandardScaler()
+x_train = sc_x.fit_transform(x_train)
+x_test = sc_x.transform(x_test)
+sc_y = StandardScaler()
+y_train = sc_y.fit_transform(y_train)"""
 
+# Fitting Multiple Linear Regression to the Training set
+regressor = LinearRegression()
+regressor.fit(x_train, y_train)
 
+# Prediction of the Test set results
+y_pred = regressor.predict(x_test)
 
 
