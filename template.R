@@ -5,6 +5,11 @@
 install.packages("tidyverse")
 install.packages("caTools")
 install.packages("cluster")
+<<<<<<< HEAD
+=======
+
+library(magrittr) # adds pipe operator
+>>>>>>> dc7fec53239e71e8465ec10631bf111f8a7800ea
 library(tidyverse) # general data tidy package
 library(caTools) # tools for data training
 library(cluster) # adds hierarchical clustering 
@@ -14,17 +19,18 @@ dataset <- read.csv("dataset.csv") # imports data to data.frame
 
 ## Accounting for missing data #################################################
 # Taking care of missing data (If there is no missing data, do not use)
-dataset$data.column3 <- ifelse(is.na(dataset$data.column3),
+dataset$data.column2 <- ifelse(is.na(dataset$data.column3),
                                 ave(dataset$data.column3, 
                                     FUN = function(x) mean(x, na.rm = TRUE)),
                                 dataset$data.column3)
 
 ## Scaling data features #######################################################
-unscaled <- select(dataset, data.column1, data.column4)
-dataset %<>% select(data.column2, data.column3) # remove data we don't want to scale
+untouched <- select(dataset, data.column1)
+dataset %<>% select(data.column2, data.column3, data.column4) # remove data we 
+# don't want to scale
 dataset %<>% scale # comment out if unnecessary
 dataset %<>% cbind(unscaled, .) # return data to data.frame
-rm(unscaled) # removes unscaled vector
+rm(untouched) # removes unscaled vector
 
 ## Handling categorical data ###################################################
 dataset$data.column1 %<>% factor(levels = c('Male', 'Female'), labels = c(0, 1))
