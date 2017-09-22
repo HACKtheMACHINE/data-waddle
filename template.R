@@ -2,15 +2,11 @@
 
 ### Data Preprocessing #########################################################
 ## Installing required packages and calling libraries ##########################
-install.packages("magrittr")
 install.packages("tidyverse")
 install.packages("caTools")
-install.packages("ggplot2")
 install.packages("cluster")
-library(magrittr) # adds pipe operator
 library(tidyverse) # general data tidy package
 library(caTools) # tools for data training
-library(ggplot2) # graphics package (contained in tidyverse)
 library(cluster) # adds hierarchical clustering 
 
 ## Importing dataset ###########################################################
