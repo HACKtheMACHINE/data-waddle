@@ -7,8 +7,8 @@ This is the github repository for Team 6 "The Team Around the Corner" for [HACKt
 
 ## Team Members:
 
-Daniel Brown (Former USN MM1/SS(NUC)) USS Alaska SSBN-732, MPS Data Analytics student at Northeastern University [![Linkedin](https://img.shields.io/badge/Linkedin-Daniel-red.svg?style=social)](http://tiny.cc/danielbrown)  
-Nicholas Rosato (Former USN MM2/SS(NUC)) USS Connecticut SSN-22, USS Philadelphia SSN-690, Software Engineer for IBM  
+Daniel Brown (Former USN MM1/SS(NUC)) SSBN-732, MPS Data Analytics student at Northeastern University [![Linkedin](https://img.shields.io/badge/Linkedin-Daniel-red.svg?style=social)](http://tiny.cc/danielbrown)  
+Nicholas Rosato (Former USN MM2/SS(NUC)) SSN-22, SSN-690, Software Engineer for IBM  
 Frederick Miller, NSWC Dahlgren  
 Avory Bryant, NSWC Dahlgren  
 Stu Bingham, NSWC Dahlgren  
