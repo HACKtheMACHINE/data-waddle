@@ -46,12 +46,12 @@ x = x[:, 1:5] # removes the "dummy variable"
 x_train, x_test, y_train, y_test = train_test_split(
         x, y, test_size = 0.2, random_state = 0)
 
-"""# Feature Scaling
+# Feature Scaling
 sc_x = StandardScaler()
 x_train = sc_x.fit_transform(x_train)
 x_test = sc_x.transform(x_test)
 sc_y = StandardScaler()
-y_train = sc_y.fit_transform(y_train)"""
+y_train = sc_y.fit_transform(y_train)
 
 # Fitting Multiple Linear Regression to the Training set
 regressor = LinearRegression()
@@ -59,5 +59,8 @@ regressor.fit(x_train, y_train)
 
 # Prediction of the Test set results
 y_pred = regressor.predict(x_test)
+
+print(np.round(y_pred, 0))
+print(y_test)
 
 

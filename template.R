@@ -5,11 +5,8 @@
 install.packages("tidyverse")
 install.packages("caTools")
 install.packages("cluster")
-<<<<<<< HEAD
-=======
 
 library(magrittr) # adds pipe operator
->>>>>>> dc7fec53239e71e8465ec10631bf111f8a7800ea
 library(tidyverse) # general data tidy package
 library(caTools) # tools for data training
 library(cluster) # adds hierarchical clustering 
