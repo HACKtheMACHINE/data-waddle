@@ -126,4 +126,5 @@ plot4 <-
         plot.title = element_text(color = "DarkBlue", size = 20))
 
 ### Call multiplot function ##############################################
+# Must load Multiplot Function from repository.
 multiplot(plot1, plot2, plot3, plot4)
