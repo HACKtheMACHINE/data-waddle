@@ -3,6 +3,7 @@
 [![EMAIL ADDRESS](https://img.shields.io/badge/CONTACT-EMAIL-brightgreen.svg)](mailto:danielrbrownjr+htm@gmail.com)
 [![MIT LICENSE](https://img.shields.io/badge/LICENSE-MIT-bri.svg)](./LICENSE.md)
 [![Linkedin](https://img.shields.io/badge/Linkedin-Daniel-red.svg?style=social)](http://tiny.cc/danielbrown)
+[![Linkedin](https://img.shields.io/badge/Linkedin-Frederick-red.svg?style=social)](http://linkedin.com/in/frederick-miller-06020386)
 
 This is the github repository for Team 6 "The Team Around the Corner" for [HACKtheMachine](https://www.hackthemachine.ai/): Data Science and the Seven Seas hosted at [MIT CSAIL](http://www.csail.mit.edu/) by the [Navy Postgraduate School](http://www.nps.edu/), [MIT](http://www.mit.edu) and [NAVSEA](http://www.navsea.navy.mil/).  
 
