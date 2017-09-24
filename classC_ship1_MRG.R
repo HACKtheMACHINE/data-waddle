@@ -1,5 +1,7 @@
+library(tsne)
 library(magrittr)
 library(tidyverse)
+library(cluster)
 
 dataset <- read.csv("classC_ship1_MRG.csv")
 
@@ -29,7 +31,7 @@ x2 <-
 x2 <- c(56, x2)
 MRG2 <- MRG2[, x2]
 
-
+unique(MRG1.tiny)
 
 colnames(MRG1) <- 
   c("time", "TN.GEAR.FWD.BRG.T",  "PRI.TN.GEAR.ENGGED", "PRI.TN.GEAR.DISENG", 
@@ -95,8 +97,28 @@ plot2 <-
         axis.title.y = element_text(color = "DarkBlue", size = 16),
         plot.title = element_text(color = "DarkBlue", size = 20))
 
-multiplot(plot1, plot2)
+plot3 <-
+  ggplot(data = M1A_10) + 
+  aes(x = as.numeric(rownames(M1A_10)), y = M1A_10$time.zero) +
+  geom_point(color = I("Purple")) + 
+  ggtitle("Class C Ship 2 MPDE (sixty eight attributes)") + 
+  xlab("Row Order") +
+  ylab("POSIX time from t=0") +
+  theme(axis.title.x = element_text(color = "DarkBlue", size = 16),
+        axis.title.y = element_text(color = "DarkBlue", size = 16),
+        plot.title = element_text(color = "DarkBlue", size = 20))
 
+plot4 <-
+  ggplot(data = M1A_68) + 
+  aes(x = as.numeric(rownames(M1A_68)), y = M1A_68$time.zero) +
+  geom_point(color = I("Orange")) + 
+  ggtitle("Class C Ship 2 MPDE (ten attributes)") + 
+  xlab("Row Order") +
+  ylab("POSIX time from t=0") +
+  theme(axis.title.x = element_text(color = "DarkBlue", size = 16),
+        axis.title.y = element_text(color = "DarkBlue", size = 16),
+        plot.title = element_text(color = "DarkBlue", size = 20))
+multiplot(plot1, plot2, plot3, plot4)
 # Multiple plot function
 #
 # ggplot objects can be passed in ..., or to plotlist (as a list of ggplot objects)
@@ -142,3 +164,30 @@ multiplot <- function(..., plotlist=NULL, file, cols=2, layout=NULL) {
     }
   }
 }
+
+#### Data Plots ###############################################################
+M1A_10$DateTime.1 = NULL
+time <- M1A_10$DateTime - 1473227204
+M1A_10 <- cbind(time.zero = time, M1A_10)
+M1A_68$DateTime.1 = NULL
+time2 <- M1A_68$DateTime - 1473227204
+M1A_68 <- cbind(time.zero = time2, M1A_68)
+
+#### Unique plots #############################################################
+unique.time <- unique(MRG1.tiny$zero.time)
+MRG1.unique <- MRG1.tiny[unique.time,]
+
+sort(MRG1.unique$zero.time)
+
+plot5 <-
+  ggplot(data = MRG1.unique) + 
+  aes(x = as.numeric(rownames(MRG1.unique)), y = MRG1.unique$zero.time) +
+  geom_point() + 
+  ggtitle("Class C Ship 2 MPDE (ten attributes)") + 
+  xlab("Row Order") +
+  ylab("POSIX time from t=0") +
+  theme(axis.title.x = element_text(color = "DarkBlue", size = 16),
+        axis.title.y = element_text(color = "DarkBlue", size = 16),
+        plot.title = element_text(color = "DarkBlue", size = 20))
+
+plot5
